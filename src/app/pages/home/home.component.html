@@ -1,0 +1,13 @@
+<p>home works!</p>
+<div class="catalog" *ngIf="productos.length; else vacio">
+  <div class="card-producto" *ngFor="let p of productos">
+    <h3>{{ p.nombre }}</h3>
+    <p>{{ p.descripcion }}</p>
+    <span>Cantidad: {{ p.cantidadDisponible }}</span>
+    <span class="precio">{{ p.precio | currency:'USD' }}</span>
+  </div>
+</div>
+
+<ng-template #vacio>
+  <p>No hay productos disponibles.</p>
+</ng-template>

@@ -1,0 +1,48 @@
+.card {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #155a9c;
+}
+
+.volver-btn {
+  background: #666;
+}
+
+.volver-btn:hover {
+  background: #444;
+}

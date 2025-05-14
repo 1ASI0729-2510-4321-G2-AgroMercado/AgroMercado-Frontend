@@ -1,0 +1,16 @@
+<div class="card">
+  <h2>Poner Producto a la Venta</h2>
+
+  <form (ngSubmit)="publicarProducto()" #formProducto="ngForm">
+    <input name="nombre" [(ngModel)]="nombre" placeholder="Nombre" required>
+    <textarea name="descripcion" [(ngModel)]="descripcion" placeholder="Descripción" required></textarea>
+    <input name="precio" type="number" [(ngModel)]="precio" placeholder="Precio" required>
+    <input name="cantidadDisponible" type="number" [(ngModel)]="cantidadDisponible" placeholder="Cantidad Disponible" required>
+
+    <button type="submit" [disabled]="formProducto.invalid">Publicar Producto</button>
+  </form>
+
+  <p *ngIf="msg">{{ msg }}</p>
+
+  <button (click)="router.navigate(['/home'])">Volver al Inicio</button>
+</div>
