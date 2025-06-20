@@ -1,26 +1,25 @@
-<!-- catálogo de productos -->
 <div class="catalog" *ngIf="productos.length; else vacio">
   <div
     class="card-producto"
     *ngFor="let p of productos"
-    (click)="verDetalle(p)"
-  >
+    (click)="verDetalle(p)">
+
     <h3>{{ p.nombre }}</h3>
     <p>{{ p.descripcion }}</p>
-    <span>Cantidad: {{ p.cantidadDisponible }}</span>
-    <span class="precio">{{ p.precio | currency : 'USD' }}</span>
+    <span>{{'HOME.Cantidad' | translate }}{{ p.cantidadDisponible }}</span>
+    <span class="precio">{{'HOME.Precio' | translate }}{{ p.precio | currency : 'USD' }}</span>
   </div>
 </div>
 
 <ng-template #vacio>
-  <p>No hay productos disponibles.</p>
+  <p>{{'HOME.Vacio' | translate }}</p>
 </ng-template>
 
 <!-- acciones principales -->
 <div class="actions">
   
-  <button (click)="navigateTo('vender')">Añadir producto</button>
-  <button (click)="navigateTo('pedidos')">Ver mis pedidos</button>
-  <button class="logout" (click)="logout()">Cerrar sesión</button>
+  <button (click)="navigateTo('vender')">{{'HOME.Añadir' | translate }}</button>
+  <button (click)="navigateTo('pedidos')">{{'HOME.Pedidos' | translate }}</button>
+  <button class="logout" (click)="logout()">{{'HOME.Salir' | translate }}</button>
   
 </div>

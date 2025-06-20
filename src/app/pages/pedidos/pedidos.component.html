@@ -8,10 +8,10 @@
 
     <thead>
     <tr>
-      <th>Producto</th>
-      <th>Cantidad</th>
-      <th>Estado</th>
-      <th>Acciones</th>
+      <th>{{'ORDERS.Producto' | translate}}</th>
+      <th>{{'ORDERS.Cantidad' | translate}}</th>
+      <th>{{'ORDERS.Estado' | translate}}</th>
+      <th>{{'ORDERS.Acciones' | translate}}</th>
     </tr>
     </thead>
 
@@ -19,10 +19,10 @@
     <tr *ngFor="let o of pedidos">
       <td>{{ o.productoNombre || ('#' + o.productoId) }}</td>
       <td>{{ o.cantidad }}</td>
-      <td>{{ o.estado }}</td>
+      <td>{{ 'ORDERS.' + o.estado | translate }} </td>
       <td>
         <button class="btn-entregado" (click)="marcarEntregado(o.id!)">
-          Entregado
+          {{'ORDERS.Entregado' | translate}}
         </button>
       </td>
     </tr>
@@ -32,7 +32,7 @@
 
   <!-- Vista alternativa (sin pedidos) -->
   <ng-template #sinPedidos>
-    <p class="mensaje-vacio">Aún no tienes pedidos.</p>
+    <p class="mensaje-vacio">{{ 'ORDERS.Vacio' | translate}}</p>
   </ng-template>
 
 </section>

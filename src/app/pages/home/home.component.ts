@@ -7,11 +7,12 @@ import { FormsModule }            from '@angular/forms';
 import { AuthService }            from '../../shared/services/auth.service';
 import { ProductoService }        from '../../shared/services/producto.service';
 import { Producto }               from '../../shared/models/producto.model';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule, TranslatePipe],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

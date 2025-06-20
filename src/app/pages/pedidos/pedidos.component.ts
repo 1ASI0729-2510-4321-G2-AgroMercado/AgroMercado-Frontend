@@ -5,11 +5,12 @@ import { RouterModule }      from '@angular/router';
 import { OrderService,  Order }    from '../../shared/services/order.service';
 import { ProductoService }         from '../../shared/services/producto.service';
 import { Producto }                from '../../shared/models/producto.model';   // ✅ modelo, no service
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   standalone: true,
   selector: 'app-pedidos',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslatePipe],
   templateUrl: './pedidos.component.html',
   styleUrls: ['./pedidos.component.scss']
 })

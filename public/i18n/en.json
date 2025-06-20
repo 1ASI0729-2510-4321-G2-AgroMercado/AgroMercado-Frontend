@@ -21,5 +21,25 @@
   "Mensaje": "Your message",
   "Enviar": "Send message",
   "Cancelar": "Cancel"
+  },
+  "HOME":
+  {
+    "Añadir": "Add product",
+    "Pedidos": "My orders",
+    "Salir": "Log out",
+    "Vacio": "There are no products available.",
+    "Cantidad": "Pvailable: ",
+    "Precio": "Price: "
+  },
+  "ORDERS":
+  {
+    "Producto":"Product",
+    "Cantidad": "Available",
+    "Estado": "Status",
+    "Acciones": "Actions",
+    "Recibido": "Mark as received",
+    "Vacio": "You have no orders yet",
+    "PENDIENTE": "TO BE RECEIVED",
+    "Entregado": "Delivered"
   }
 }

@@ -21,5 +21,25 @@
     "Mensaje": "Tu mensaje",
     "Enviar": "Enviar mensaje",
     "Cancelar": "Cancelar"
+  },
+  "HOME":
+  {
+    "Añadir": "Añadir producto",
+    "Pedidos": "Ver mis pedidos",
+    "Salir": "Cerrar Sesion",
+    "Vacio": "No hay productos disponibles.",
+    "Cantidad": "Cantidad: ",
+    "Precio": "Precio: "
+  },
+  "ORDERS":
+  {
+    "Producto":"Producto",
+    "Cantidad": "Disponibles",
+    "Estado": "Estado de envio",
+    "Acciones": "Acciones",
+    "Recibido": "Marcar como recibido",
+    "Vacio": "Aún no tienes pedidos",
+    "PENDIENTE": "PENDIENTE",
+    "Entregado": "Entregado"
   }
 }
