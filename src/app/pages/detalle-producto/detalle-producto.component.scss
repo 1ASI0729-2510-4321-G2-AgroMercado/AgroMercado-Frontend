@@ -1,0 +1,352 @@
+.page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto 40px auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.producto-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  .img-producto {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4caf50;
+  }
+
+  .info-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .precio {
+      font-weight: bold;
+      color: #1976d2;
+    }
+
+    small {
+      margin-top: 8px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.pedido-form {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    background: #4caf50;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #388e3c;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.msg {
+  text-align: center;
+  font-size: 1rem;
+  color: green;
+}
+
+.seccion-titulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 24px;
+  color: #333;
+}
+
+.comentarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.comentario {
+  background: #4caf50;
+  color: white;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  .comentario-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    strong {
+      font-size: 1rem;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+
+/* ➕ Botón flotante para añadir comentario */
+.btn-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+
+  &:hover {
+    background: #388e3c;
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive 📱 */
+@media (max-width: 768px) {
+  .producto-info {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .comentarios {
+    grid-template-columns: 1fr;
+  }
+}
+.formulario-comentario {
+  background: #ffffff;
+  padding: 24px;
+  margin-top: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeIn 0.3s ease-in-out;
+
+  h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: vertical;
+  }
+
+  .formulario-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .guardar {
+      background: #4caf50;
+      color: white;
+
+      &:hover {
+        background: #388e3c;
+        transform: scale(1.05);
+      }
+    }
+
+    .cancelar {
+      background: #e0e0e0;
+      color: #333;
+
+      &:hover {
+        background: #bdbdbd;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.acciones-extra {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-eliminar {
+  padding: 10px 20px;
+  background: #e53935;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background: #c62828;
+    transform: scale(1.05);
+  }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  animation: fadeInModal 0.3s ease;
+}
+
+.modal h2 {
+  margin: 0 0 16px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.btn-cancelar {
+  flex: 1;
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #bdbdbd;
+  }
+}
+
+.btn-confirmar {
+  flex: 1;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #c62828;
+  }
+}
+
+/* Animación del Modal */
+@keyframes fadeInModal {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}

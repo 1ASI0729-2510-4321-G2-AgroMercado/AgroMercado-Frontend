@@ -1,18 +1,91 @@
-.catalog {                           /* contenedor */
+.catalog {
   display: grid;
-  gap: 16px;
-  margin-top: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 2rem;
+  justify-items: center;
 }
 
 .card-producto {
-  padding: 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.08);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  background-color: #43a047; // verde institucional
+  border-radius: 16px;
+  padding: 16px;
+  width: 100%;
+  max-width: 260px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 
-  h3   { margin: 0; font-size: 1.1rem; }
-  .precio { font-weight: 600; color: #1976d2; }
+  // ► NUEVO: imagen superior
+  .thumbnail {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px 12px 4px 4px;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: lowercase;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .precio {
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    background-color: #2e7d32;
+  }
+}
+
+.actions {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+
+  button {
+    background-color: #1b5e20;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #0d4d1a;
+      transform: scale(1.05);
+    }
+
+    &.logout {
+      background-color: #c62828;
+
+      &:hover {
+        background-color: #b71c1c;
+      }
+    }
+  }
 }

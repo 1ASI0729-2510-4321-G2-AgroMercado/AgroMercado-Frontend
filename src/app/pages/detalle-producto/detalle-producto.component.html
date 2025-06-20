@@ -1,0 +1,91 @@
+
+
+<div class="page-container">
+
+  <div class="card" *ngIf="producto; else cargando">
+
+    <!-- Información del producto -->
+    <div class="producto-info">
+      <img src="https://via.placeholder.com/120" alt="Producto" class="img-producto">
+      <div class="info-texto">
+        <h2>{{ producto.nombre }}</h2>
+        <p>{{ producto.descripcion }}</p>
+        <p class="precio">{{ producto.precio | currency:'USD' }} / unidad</p>
+        <small>Cantidad disponible: {{ producto.cantidadDisponible }}</small>
+      </div>
+    </div>
+
+    <!-- Formulario de pedido -->
+    <div class="pedido-container">
+      <form #f="ngForm" (ngSubmit)="realizarPedido()" class="pedido-form">
+        <input name="cantidad" [(ngModel)]="cantidad" type="number" min="1" required placeholder="Cantidad a comprar">
+        <button type="submit" [disabled]="f.invalid">Realizar Pedido</button>
+      </form>
+    </div>
+
+    <p class="msg" *ngIf="msg">{{ msg }}</p>
+
+    <!-- Sección de reseñas -->
+    <h3 class="seccion-titulo">Reseñas</h3>
+
+    <div class="comentarios" *ngIf="comentarios.length; else sinComentarios">
+      <div class="comentario" *ngFor="let c of comentarios">
+        <div class="comentario-header">
+          <img src="https://via.placeholder.com/40" alt="Avatar" class="avatar">
+          <strong>{{ c.compradorEmail }}</strong>
+        </div>
+        <p>{{ c.comentario }}</p>
+      </div>
+    </div>
+
+    <ng-template #sinComentarios>
+      <p>No hay comentarios aún.</p>
+    </ng-template>
+
+    <!-- Botón flotante para añadir comentario -->
+    <button class="btn-float" title="Añadir Comentario" (click)="toggleFormularioComentario()">
+      +
+    </button>
+
+    <!-- Formulario de añadir comentario -->
+    <div *ngIf="mostrarFormularioComentario" class="formulario-comentario">
+      <h3>Nuevo Comentario</h3>
+      <textarea [(ngModel)]="nuevoComentarioTexto" placeholder="Escribe tu comentario aquí..." required></textarea>
+      <div class="formulario-actions">
+        <button type="button" (click)="guardarNuevoComentario()" [disabled]="!nuevoComentarioTexto.trim()">Guardar</button>
+        <button type="button" class="sec" (click)="toggleFormularioComentario()">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- Botón para confirmar eliminación -->
+    <div class="acciones-extra">
+      <button class="btn-eliminar" (click)="confirmarEliminar()">Eliminar Producto</button>
+    </div>
+
+    <!-- Modal personalizado de confirmación -->
+    <div class="modal-overlay" *ngIf="mostrarModalEliminar">
+      <div class="modal">
+        <h2>¿Eliminar Producto?</h2>
+        <p>¿Estás seguro que deseas eliminar este producto?</p>
+        <div class="modal-actions">
+          <button class="btn-cancelar" (click)="cancelarEliminar()">Cancelar</button>
+          <button class="btn-confirmar" (click)="eliminarProducto()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <ng-template #cargando>
+    <p>Cargando producto...</p>
+  </ng-template>
+
+</div>
+
+<!-- Toast flotante para mensajes -->
+<div class="toast" *ngIf="toastVisible">
+  {{ toastMessage }}
+</div>
+
+
+

@@ -1,81 +1,68 @@
-/* ───────── contenedor general ───────── */
-:host {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
-  font-family: Roboto, Arial, sans-serif;
-}
-
-/* ───────── tarjeta principal ───────── */
 .auth-card {
   width: 360px;
-  padding: 2rem 2.5rem;
-  border-radius: 1.25rem;
+  margin: 100px auto;
+  padding: 24px;
   background: #fff;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
-  animation: pop .4s ease;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-@keyframes pop {
-  0%   { transform: scale(.85); opacity: 0; }
-  100% { transform: scale(1);   opacity: 1; }
-}
-
-/* ───────── mat-form-field ───────── */
-mat-form-field {
-  width: 100%;
-  margin-bottom: 1.2rem;
-}
-
-/* triángulo de cuidado al error */
-.mat-mdc-form-field-error {
-  font-size: .75rem;
-  color: #d32f2f;
-  margin-top: .25rem;
-}
-
-/* ───────── Botón de acción ───────── */
-button[type="submit"] {
-  width: 100%;
-  margin-top: 1.5rem;
-  padding: .75rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: .75rem;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-button[type="submit"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, .14);
-}
-
-/* ───────── enlace alternativo (login ↔︎ register) ───────── */
-a.link-alt {
-  display: block;
-  margin-top: 1rem;
+h2 {
   text-align: center;
-  font-size: .875rem;
-  font-weight: 500;
+  margin-bottom: 12px;
+  color: #2e7d32; // verde más amigable
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #2e7d32;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  background: #2e7d32;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #1b5e20;
+}
+
+button:disabled {
+  background: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.link-alt {
+  text-align: center;
+  font-size: 0.9rem;
   color: #2e7d32;
-  position: relative;
   text-decoration: none;
 }
 
-a.link-alt::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -2px;
-  width: 0;
-  height: 2px;
-  background: currentColor;
-  transition: width .25s ease, left .25s ease;
+.link-alt:hover {
+  text-decoration: underline;
 }
 
-a.link-alt:hover::after {
-  width: 100%;
-  left: 0;
+.msg {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  text-align: center;
 }

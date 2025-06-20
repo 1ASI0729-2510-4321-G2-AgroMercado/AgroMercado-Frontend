@@ -1,1 +1,17 @@
-<p>header works!</p>
+<!-- src/app/components/header/header.component.html -->
+<header class="header" *ngIf="visible">
+  <!-- Logo / Home -->
+  <div class="logo" (click)="goHome()">
+    <img src="https://via.placeholder.com/40x40" alt="Logo AgroMercado">
+    <span>AgroMercado</span>
+  </div>
+
+  <!-- Navegación principal -->
+  <nav class="nav-links">
+    <button (click)="goHome()">Inicio</button>
+    <button (click)="goPedidos()">Pedidos</button>
+    <button (click)="goPerfil()">Perfil</button>
+
+    <button class="logout" (click)="logout()">Cerrar sesión</button>
+  </nav>
+</header>

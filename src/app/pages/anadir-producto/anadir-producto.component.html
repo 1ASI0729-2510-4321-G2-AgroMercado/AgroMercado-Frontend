@@ -1,16 +1,27 @@
+
+
 <div class="card">
   <h2>Poner Producto a la Venta</h2>
 
-  <form (ngSubmit)="publicarProducto()" #formProducto="ngForm">
+  <form (ngSubmit)="publicar()" #formProducto="ngForm">
     <input name="nombre" [(ngModel)]="nombre" placeholder="Nombre" required>
-    <textarea name="descripcion" [(ngModel)]="descripcion" placeholder="Descripción" required></textarea>
-    <input name="precio" type="number" [(ngModel)]="precio" placeholder="Precio" required>
-    <input name="cantidadDisponible" type="number" [(ngModel)]="cantidadDisponible" placeholder="Cantidad Disponible" required>
 
-    <button type="submit" [disabled]="formProducto.invalid">Publicar Producto</button>
+    <textarea name="descripcion" [(ngModel)]="descripcion" placeholder="Descripción" required></textarea>
+
+    <input name="precio" type="number" [(ngModel)]="precio" placeholder="Precio" required min="0">
+
+    <input name="cantidadDisponible" type="number" [(ngModel)]="cantidadDisponible" placeholder="Cantidad Disponible" required min="1">
+
+    <div class="actions">
+      <button type="submit" [disabled]="formProducto.invalid">Publicar Producto</button>
+      <button type="button" class="sec" (click)="router.navigate(['/home'])">Volver al Inicio</button>
+    </div>
   </form>
 
-  <p *ngIf="msg">{{ msg }}</p>
-
-  <button (click)="router.navigate(['/home'])">Volver al Inicio</button>
+  <!-- Mensaje flotante tipo Toast -->
+  <div *ngIf="toastMsg" class="toast" [ngClass]="toastType">
+    {{ toastMsg }}
+  </div>
 </div>
+
+

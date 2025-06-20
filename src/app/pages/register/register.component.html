@@ -1,14 +1,13 @@
 <div class="auth-card">
   <h2>Crear cuenta</h2>
 
-  <form (ngSubmit)="save()">
+  <form (ngSubmit)="save()" #f="ngForm">
     <input
       placeholder="Nombre"
       name="nombre"
       [(ngModel)]="nombre"
       required
     />
-
     <input
       placeholder="Email"
       type="email"
@@ -16,7 +15,6 @@
       [(ngModel)]="email"
       required
     />
-
     <input
       placeholder="Contraseña"
       type="password"
@@ -26,10 +24,10 @@
       minlength="7"
     />
 
-    <button type="submit">Registrar</button>
+    <button type="submit" [disabled]="f.invalid">Registrar</button>
   </form>
 
-  <p>{{ msg }}</p>
+  <p class="msg">{{ msg }}</p>
 
   <a routerLink="/login" class="link-alt">
     ¿Ya tienes cuenta? Inicia sesión aquí

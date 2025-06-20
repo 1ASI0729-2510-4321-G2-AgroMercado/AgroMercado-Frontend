@@ -1,4 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset y base */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.contenido-principal {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* Botones globales */
+button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+
+  &:hover {
+    background-color: #388e3c;
+    transform: scale(1.03);
+  }
+}
+
+/* Enlaces */
+a {
+  color: #4caf50;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Inputs */
+input, textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}

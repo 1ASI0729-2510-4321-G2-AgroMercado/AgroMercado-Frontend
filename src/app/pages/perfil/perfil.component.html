@@ -1,0 +1,31 @@
+<div class="perfil-container">
+  <h2>Mi perfil</h2>
+
+  <div class="perfil-card">
+    <div class="perfil-info">
+      <p><strong>Nombre:</strong><br> {{ usuario?.nombre }}</p>
+      <a (click)="cambiarNombre()">Cambiar nombre</a>
+
+      <p><strong>Correo electrónico:</strong><br> {{ usuario?.email }}</p>
+      <a (click)="cambiarCorreo()">Cambiar correo</a>
+
+      <p><strong>Contraseña:</strong><br> ********</p>
+      <a (click)="cambiarPassword()">Cambiar contraseña</a>
+
+      <p><strong>Cuenta:</strong><br> {{ usuario?.enabled ? 'Activa' : 'Inactiva' }}</p>
+      <a (click)="eliminarCuenta()">Eliminar cuenta</a>
+
+      <div class="acciones">
+        <button (click)="confirmarCambios()">Confirmar</button>
+      </div>
+    </div>
+
+    <div class="perfil-avatar">
+      <div class="avatar-circle">
+        <span>Avatar</span>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="msg">{{ msg }}</p>
+</div>

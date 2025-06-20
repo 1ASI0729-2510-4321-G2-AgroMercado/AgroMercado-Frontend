@@ -5,7 +5,6 @@ import { Observable, map }   from 'rxjs';
 import { environment }       from '../../../environments/environment';
 import { Producto }          from '../models/producto.model';
 import { Comentario }        from '../models/comentario.model';   // 👈 nuevo modelo
-
 /** Forma exacta en que el back-end envía la lista */
 interface CatalogoResponse {
   mensaje:  string;
@@ -42,5 +41,9 @@ export class ProductoService {
   /** POST /catalog/productos/{id}/comentarios */
   crearComentario(c: Comentario): Observable<Comentario> {
     return this.http.post<Comentario>(`${this.base}/${c.productoId}/comentarios`, c);
+  }
+  // src/app/shared/services/producto.service.ts
+  eliminar(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.base}/${id}`);
   }
 }

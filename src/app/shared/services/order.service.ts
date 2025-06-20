@@ -1,25 +1,44 @@
-// src/app/shared/services/order.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
-/** DTO para crear una orden */
+/* ---------- Tipos ---------- */
+export interface Order {
+  id?: number;
+  productoId: number;
+  compradorEmail: string;
+  cantidad: number;
+  fechaOrden: string;
+  estado: string;
+}
+
 export interface NuevaOrdenDto {
   productoId: number;
   compradorEmail: string;
   cantidad: number;
 }
 
+/* ---------- Service ---------- */
 @Injectable({ providedIn: 'root' })
 export class OrderService {
-  /** /api/orders */
   private readonly base = `${environment.apiRoot}/orders`;
 
   constructor(private http: HttpClient) {}
 
   /** Crear una nueva orden */
-  crear(dto: NuevaOrdenDto): Observable<any> {
-    return this.http.post(`${this.base}`, dto);
+  crear(dto: NuevaOrdenDto): Observable<Order> {
+    return this.http.post<Order>(this.base, dto);
+  }
+
+  /** Listar todas las órdenes */
+  listarOrdenes(): Observable<Order[]> {
+    return this.http.get<{ ordenes: Order[] }>(this.base)
+      .pipe(map(r => r.ordenes ?? []));
+  }
+
+  /** Eliminar (o marcar entregada) una orden */
+  eliminarOrden(id: number): Observable<any> {
+    return this.http.delete(`${this.base}/${id}`);
   }
 }

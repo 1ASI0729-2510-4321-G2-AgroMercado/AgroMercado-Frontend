@@ -1,1 +1,47 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Izquierda: Logo y Nombre -->
+    <div class="footer-section logo-section">
+      <img src="https://via.placeholder.com/40" alt="Logo AgroMercado">
+      <span>AgroMercado</span>
+    </div>
+
+    <!-- Centro: GitHub + Like + Suscripción -->
+    <div class="footer-section center-section">
+      <a class="github-link" href="https://github.com/1ASI0729-2510-4321-G2-AgroMercado" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="github-icon">
+        Visítanos en GitHub
+      </a>
+
+      <button class="btn-like" (click)="simularMeGusta()">🔥 Me gusta</button>
+
+      <form (submit)="simularSuscripcion($event)" class="suscription-form">
+        <input type="email" placeholder="Tu email" required>
+        <button type="submit">Suscribirme</button>
+      </form>
+    </div>
+
+    <!-- Derecha: Contacto -->
+    <div class="footer-section contact-section">
+      <button class="btn-contact" (click)="abrirFormularioContacto()">Contáctanos</button>
+    </div>
+
+  </div>
+
+  <!-- Formulario Modal de contacto -->
+  <div class="modal-overlay" *ngIf="mostrarFormularioContacto">
+    <div class="modal-contacto">
+      <h2>Contáctanos</h2>
+      <form (submit)="cerrarFormularioContacto($event)">
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu email" required>
+        <textarea placeholder="Tu mensaje" required></textarea>
+        <div class="modal-actions">
+          <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+          <button type="button" class="btn-cancelar" (click)="cerrarFormularioContacto()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</footer>

@@ -9,3 +9,4 @@ export interface Comentario {
   comentario: string;
   fechaCalificacion: string; // como viene de backend, es ISO string
 }
+

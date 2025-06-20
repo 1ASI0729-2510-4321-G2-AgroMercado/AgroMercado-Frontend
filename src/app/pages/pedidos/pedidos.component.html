@@ -1,0 +1,38 @@
+<section class="pedidos">
+
+  <!-- Mensaje de carga o error -->
+  <p *ngIf="msg">{{ msg }}</p>
+
+  <!-- Tabla principal -->
+  <table *ngIf="pedidos.length; else sinPedidos" class="tabla-pedidos">
+
+    <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let o of pedidos">
+      <td>{{ o.productoNombre || ('#' + o.productoId) }}</td>
+      <td>{{ o.cantidad }}</td>
+      <td>{{ o.estado }}</td>
+      <td>
+        <button class="btn-entregado" (click)="marcarEntregado(o.id!)">
+          Entregado
+        </button>
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+
+  <!-- Vista alternativa (sin pedidos) -->
+  <ng-template #sinPedidos>
+    <p class="mensaje-vacio">Aún no tienes pedidos.</p>
+  </ng-template>
+
+</section>
