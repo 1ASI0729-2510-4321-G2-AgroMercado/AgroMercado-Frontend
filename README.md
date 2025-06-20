@@ -2,6 +2,10 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
 
+## Tokens
+
+This project use logo.dev Api, you need to provide a APIkey in environment.ts
+
 ## Development server
 
 To start a local development server, run:

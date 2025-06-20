@@ -1,11 +1,11 @@
-// src/app/components/footer/footer.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LogoComponent } from "../logo/logo.component";
 
 @Component({
   standalone: true,
   selector: 'app-footer',
-  imports: [CommonModule],
+  imports: [CommonModule, LogoComponent],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })

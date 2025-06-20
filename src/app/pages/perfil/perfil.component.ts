@@ -22,7 +22,7 @@ export class PerfilComponent {
     this.msg = 'Cargando…';
 
     if (idUsuario) {
-      this.usuarioService.obtener(+idUsuario).subscribe({  // 👈 corregido
+      this.usuarioService.obtener(+idUsuario).subscribe({
         next: (user: Usuario) => {
           this.usuario = user;
           this.msg = '';
