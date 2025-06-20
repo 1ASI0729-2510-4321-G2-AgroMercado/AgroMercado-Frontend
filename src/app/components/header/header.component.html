@@ -1,16 +1,27 @@
-<!-- src/app/components/header/header.component.html -->
 <header class="header" *ngIf="visible">
   <!-- Logo / Home -->
-  <div class="logo" (click)="goHome()">
+  <div class="header__logo" (click)="goHome()">
     <img src="AgroMercado.png" alt="Logo AgroMercado" height="64px">
   </div>
 
   <!-- Navegación principal -->
-  <nav class="nav-links">
-    <button (click)="goHome()">Inicio</button>
-    <button (click)="goPedidos()">Pedidos</button>
-    <button (click)="goPerfil()">Perfil</button>
-
-    <button class="logout" (click)="logout()">Cerrar sesión</button>
+  <nav class="header__nav">
+    <button (click)="goHome()">{{ 'HEADER.Inicio' | translate }}</button>
+    <button (click)="goPedidos()">{{ 'HEADER.Pedidos' | translate }}</button>
+    <button (click)="goPerfil()">{{ 'HEADER.Perfil' | translate }}</button>
+    <button class="logout" (click)="logout()">{{ 'HEADER.Sesion' | translate }}</button>
   </nav>
+
+  <!-- Selector de idioma -->
+  <div class="header__lang">
+    <mat-button-toggle-group
+      [value]="currentLang"
+      (change)="switchLang($event.value)"
+      name="language"
+      aria-label="Select language"
+      appearance="legacy">
+      <mat-button-toggle value="en">EN</mat-button-toggle>
+      <mat-button-toggle value="es">ES</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
 </header>

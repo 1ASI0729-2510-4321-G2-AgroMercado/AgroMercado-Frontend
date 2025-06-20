@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogoComponent } from "../logo/logo.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   standalone: true,
   selector: 'app-footer',
-  imports: [CommonModule, LogoComponent],
+  imports: [CommonModule, LogoComponent, TranslatePipe],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })

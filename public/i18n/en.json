@@ -1,0 +1,25 @@
+{
+  "LOGIN": {
+    "Email": "Email",
+    "Contraseña": "Password"
+  },
+  "HEADER":
+  {
+    "Inicio": "Home",
+    "Pedidos": "Orders",
+    "Perfil": "User",
+    "Sesion": "log out"
+  },
+  "FOOTER":
+  {
+  "Github": "Visit us on GitHub",
+  "Contacto": "Contact us",
+  "Gusta": "Like",
+  "Email": "Your email",
+  "Suscribete": "Subscribe",
+  "Nombre": "Your name",
+  "Mensaje": "Your message",
+  "Enviar": "Send message",
+  "Cancelar": "Cancel"
+  }
+}

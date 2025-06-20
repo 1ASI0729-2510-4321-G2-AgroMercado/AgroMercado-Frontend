@@ -106,3 +106,57 @@ $color-logout-hover: #b71c1c;
     }
   }
 }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height;
+  padding: $header-padding;
+  background-color: $header-bg;
+  color: $header-color;
+  font-family: $font-stack;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    gap: 16px;
+
+    button {
+      background: transparent;
+      border: none;
+      color: inherit;
+      font-family: inherit;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+    }
+
+    // .logout {
+    //   background-color: $color-logout;
+
+    //   &:hover {
+    //     background-color: $color-logout-hover;
+    //   }
+    // }
+  }
+
+  &__lang {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -10,20 +10,20 @@
     <div class="footer-section center-section">
       <a class="github-link" href="https://github.com/1ASI0729-2510-4321-G2-AgroMercado" target="_blank">
         <app-logo domain="github.com" [size]="16"></app-logo>
-        Visítanos en GitHub
+        {{ 'FOOTER.Github' | translate }}
       </a>
 
-      <button class="btn-like" (click)="simularMeGusta()">🔥 Me gusta</button>
+      <button class="btn-like" (click)="simularMeGusta()">🔥 {{ 'FOOTER.Gusta' | translate }}</button>
 
       <form (submit)="simularSuscripcion($event)" class="suscription-form">
-        <input type="email" placeholder="Tu email" required>
-        <button type="submit">Suscribirme</button>
+        <input type="email" placeholder="{{ 'FOOTER.Email' | translate }}" required>
+        <button type="submit">{{ 'FOOTER.Suscribete' | translate }}</button>
       </form>
     </div>
 
     <!-- Derecha: Contacto -->
     <div class="footer-section contact-section">
-      <button class="btn-contact" (click)="abrirFormularioContacto()">Contáctanos</button>
+      <button class="btn-contact" (click)="abrirFormularioContacto()">{{ 'FOOTER.Contacto' | translate }}</button>
     </div>
 
   </div>
@@ -31,14 +31,14 @@
   <!-- Formulario Modal de contacto -->
   <div class="modal-overlay" *ngIf="mostrarFormularioContacto">
     <div class="modal-contacto">
-      <h2>Contáctanos</h2>
+      <h2>{{ 'FOOTER.Contacto' | translate }}</h2>
       <form (submit)="cerrarFormularioContacto($event)">
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="email" placeholder="Tu email" required>
-        <textarea placeholder="Tu mensaje" required></textarea>
+        <input type="text" placeholder="{{ 'FOOTER.Nombre' | translate }}" required>
+        <input type="email" placeholder="{{ 'FOOTER.Email' | translate }}" required>
+        <textarea placeholder="{{ 'FOOTER.Mensaje' | translate }}" required></textarea>
         <div class="modal-actions">
-          <button type="submit" class="btn-enviar">Enviar Mensaje</button>
-          <button type="button" class="btn-cancelar" (click)="cerrarFormularioContacto()">Cancelar</button>
+          <button type="submit" class="btn-enviar">{{ 'FOOTER.Enviar' | translate }}</button>
+          <button type="button" class="btn-cancelar" (click)="cerrarFormularioContacto()">{{ 'FOOTER.Cancelar' | translate }}</button>
         </div>
       </form>
     </div>
